@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import userLogo from '../../assets/user.png'
+import { AuthContext } from '../Provider/AuthProvider';
 const NavBar = () => {
+
+  const { LogOutUser}= useContext(AuthContext)
+  const handleLogOut=()=>{
+    console.log('logged out');
+    LogOutUser()
+    .then(()=>console.log('logged Out successfully'))
+
+    .catch(error=>console.log(error.message))
+  }
+
+  const {user}=useContext(AuthContext);
+
     const links =<div className='flex text-lg font-semibold gap-5'>
 
     <NavLink to='/'>Home</NavLink>
-    <NavLink to='/update'>Update Profile</NavLink>
-    <NavLink to='/user'>User Profile</NavLink>
+   {
+     user&& <>
+     
+     <NavLink to='/update'>Update Profile</NavLink>
+     <NavLink to='/user'>User Profile</NavLink>
+     </>
+   }
     
     </div>
     return (
@@ -46,8 +64,13 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
+          
             <img src={userLogo} alt="" />
-          <NavLink to='/login' className="btn">Login</NavLink>
+          
+            {
+              user?<NavLink className='btn' onClick={handleLogOut}>Logout</NavLink>: <NavLink to='/login' className="btn">Login</NavLink>
+            }
+         
         </div>
       </div>
     );

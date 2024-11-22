@@ -5,7 +5,8 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 const Register = () => {
 
-    const {createNewUser} =useContext(AuthContext)
+    const {createNewUser ,user} =useContext(AuthContext)
+    console.log(user?.email);
 
     const handleRegister=(e)=>{
         e.preventDefault();
