@@ -16,6 +16,7 @@ import AuthProvider from './Components/Provider/AuthProvider.jsx';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute.jsx';
+import Update from './Components/Update/Update.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path:'/register',
     element:<Register></Register>
+  },
+  {
+    path:'/update',
+    element:<Update></Update>
   }
 ]);
 

@@ -69,10 +69,12 @@ const NavBar = () => {
         </div>
         <div className="navbar-end">
           
-            <img src={userLogo} alt="" />
+            
           
             {
-              user?<NavLink className='btn' onClick={handleLogOut}>Logout</NavLink>: <NavLink to='/login' className="btn">Login</NavLink>
+              user?<div className='flex m-5 gap-5'> 
+              <img src={user.photoURL} alt="" className='w-14 rounded-full' />  <NavLink className='btn' onClick={handleLogOut}>Logout</NavLink>
+              </div>: <div><img src={userLogo} alt="" /><NavLink to='/login' className="btn">Login</NavLink></div>
             }
          
         </div>
@@ -81,3 +83,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
