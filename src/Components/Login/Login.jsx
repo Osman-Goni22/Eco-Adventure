@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import NavBar from '../NavBar/NavBar';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    const navigate =useNavigate()
 
     const {LoginUser}=useContext(AuthContext)
 
@@ -14,7 +16,8 @@ const Login = () => {
         console.log(email,password);
         LoginUser(email,password)
         .then(result=>{
-            console.log(result.user);
+           toast(` logged in successfully`);
+           navigate('/')
         })
 
         .catch(error=>console.log(error.message)
