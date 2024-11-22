@@ -15,6 +15,7 @@ import Register from './Components/Register/Register.jsx';
 import AuthProvider from './Components/Provider/AuthProvider.jsx';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/details/:id',
-        element:<DetailsBody></DetailsBody>,
+        element:<PrivateRoute><DetailsBody></DetailsBody></PrivateRoute>,
         loader:()=>fetch('/Data.json')
       }
     ]

@@ -18,12 +18,12 @@ const NavBar = () => {
 
     const links =<div className='flex text-lg font-semibold gap-5'>
 
-    <NavLink to='/'>Home</NavLink>
+    <NavLink className='btn' to='/'>Home</NavLink>
    {
      user&& <>
      
-     <NavLink to='/update'>Update Profile</NavLink>
-     <NavLink to='/user'>User Profile</NavLink>
+     <NavLink className='btn' to='/update'>Update Profile</NavLink>
+     <NavLink className='btn'  to='/user'>User Profile</NavLink>
      </>
    }
     
