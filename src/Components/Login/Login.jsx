@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import NavBar from '../NavBar/NavBar';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
     const navigate =useNavigate()
+
+    const location = useLocation();
 
     const {LoginUser}=useContext(AuthContext)
 
@@ -17,7 +19,10 @@ const Login = () => {
         LoginUser(email,password)
         .then(result=>{
            toast(` logged in successfully`);
-           navigate('/')
+           {
+             navigate(location?.state?location.state:'/');
+           }
+          
         })
 
         .catch(error=>console.log(error.message)
@@ -56,3 +61,4 @@ const Login = () => {
 };
 
 export default Login;
+
