@@ -1,4 +1,5 @@
 import Banner from "../Banner/Banner";
+import Footer from "../Footer/Footer";
 import LeftNavBar from "../LeftNavBar/LeftNavBar";
 import NavBar from "../NavBar/NavBar";
 import { Outlet } from "react-router-dom";
@@ -18,6 +19,7 @@ const Home = () => {
                   <Outlet></Outlet>
                 </main>
             </section>
+            <Footer></Footer>
         </div>
     );
 };

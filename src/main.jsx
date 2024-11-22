@@ -17,6 +17,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute.jsx';
 import Update from './Components/Update/Update.jsx';
+import User from './Components/User/User.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
   {
     path:'/update',
     element:<Update></Update>
+  },
+  {
+    path:'/user',
+    element:<PrivateRoute><User></User></PrivateRoute>
   }
 ]);
 

@@ -23,6 +23,8 @@ const NavBar = () => {
     const links =<div className='flex text-lg font-semibold gap-5'>
 
     <NavLink className='btn' to='/'>Home</NavLink>
+    <NavLink className='btn' to='/register'>Sign Up</NavLink>
+    <NavLink className='btn'  to='/login'>Login</NavLink>
    {
      user&& <>
      
@@ -73,7 +75,7 @@ const NavBar = () => {
           
             {
               user?<div className='flex m-5 gap-5'> 
-              <img src={user.photoURL} alt="" className='w-14 rounded-full' />  <NavLink className='btn' onClick={handleLogOut}>Logout</NavLink>
+              <img src={user.photoURL} alt="" className='w-12 rounded-full' />  <NavLink className='btn' onClick={handleLogOut}>Logout</NavLink>
               </div>: <div><img src={userLogo} alt="" /><NavLink to='/login' className="btn">Login</NavLink></div>
             }
          

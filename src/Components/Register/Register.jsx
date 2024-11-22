@@ -1,9 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import NavBar from '../NavBar/NavBar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import { Navigate } from 'react-router-dom';
 const Register = () => {
+
+    const navigate = useNavigate()
+    const [error, setError]=useState(null)
 
     const {createNewUser ,user} =useContext(AuthContext)
     console.log(user?.email);
@@ -12,12 +16,20 @@ const Register = () => {
         e.preventDefault();
         const email =e.target.email.value;
         const password = e.target.password.value;
+        const regREX=/^(?=.*[A-Z])(?=.*[a-z]).{6,}$/
+          setError(null)
+        if(!regREX.test(password)){
+            setError('password should contain at least one upper case at least lower case and length at least 6')
+            return;
+        }
+       
         const name = e.target.name.value;
         const photo = e.target.photo.value;
         console.log(name,email,photo,password);
         createNewUser(email,password)
         .then(result=>{
             toast(`Hi,${name} welcome to our new website`);
+            navigate('/')
         })
 
         .catch(err=>console.log(err.message))
@@ -58,7 +70,10 @@ const Register = () => {
                             <button className="btn btn-primary">Register</button>
                         </div>
 
-                        <p>Already have an account? <Link to='/login'>Login</Link></p>
+                        <p>Already have an account? <Link className='text-red-400' to='/login'>Login</Link></p>
+                        {
+                            error&& <p className='text-red-200'>{error}</p>
+                        }
                     </form>
                 </div>
             </div>
