@@ -4,7 +4,8 @@ import NavBar from '../NavBar/NavBar';
 import { updateProfile } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-
+import PageTitle from '../PageTitle/PageTitle';
+import Footer from '../Footer/Footer';
 const Update = () => {
     const { user, updateUserProfile } = useContext(AuthContext)
    const navigate =useNavigate();
@@ -29,7 +30,8 @@ const Update = () => {
     return (
         <div className='lg:max-w-6xl mx-auto'>
             <NavBar></NavBar>
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+            <PageTitle></PageTitle>
+            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mb-5">
             <form onSubmit={handleUpdate} className="">
                 <div className="form-control">
                     <label className="label">
@@ -49,6 +51,7 @@ const Update = () => {
                 </div>
             </form>
         </div>
+        <Footer></Footer>
         </div>
     );
 };

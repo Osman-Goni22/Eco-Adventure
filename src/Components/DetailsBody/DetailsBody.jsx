@@ -97,11 +97,10 @@ const DetailsBody = () => {
                             </div>
 
 
-                        
-
-
-                        
-                        <button onClick={checkConsultation} className='btn '>Talk With Expert</button>
+                         <div className='flex gap-2 my-5'>
+                         <button onClick={checkConsultation} className='btn '>Talk With Expert</button>
+                         <button className='btn '>Add to WishList</button>
+                         </div>
 
                     </div>
                 </div>

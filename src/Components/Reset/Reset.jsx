@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import NavBar from "../NavBar/NavBar";
 import { AuthContext } from "../Provider/AuthProvider";
+import PageTitle from "../PageTitle/PageTitle";
 
 
 
@@ -24,6 +25,7 @@ const Reset = () => {
     return (
         <div>
             <NavBar></NavBar>
+            <PageTitle></PageTitle>
             <div className="flex justify-center">
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form className="card-body">

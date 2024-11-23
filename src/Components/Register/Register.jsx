@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { Navigate } from 'react-router-dom';
+import Footer from '../Footer/Footer';
+import PageTitle from '../PageTitle/PageTitle';
 const Register = () => {
 
     const navigate = useNavigate()
@@ -40,7 +42,8 @@ const Register = () => {
     return (
         <div className='max-w-6xl mx-auto'>
             <NavBar></NavBar>
-            <div className='mx-auto'>
+            <PageTitle></PageTitle>
+            <div className='mx-auto mb-6'>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto py-5">
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
@@ -79,6 +82,7 @@ const Register = () => {
                     </form>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

@@ -22,6 +22,7 @@ import Update from './Components/Update/Update.jsx';
 import User from './Components/User/User.jsx';
 import Reset from './Components/Reset/Reset.jsx';
 import NotFound from './Components/NotFound/NotFound.jsx';
+import PageTitle from './Components/PageTitle/PageTitle.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -82,7 +83,7 @@ createRoot(document.getElementById('root')).render(
    <AuthProvider>
    <RouterProvider router={router} />
    <ToastContainer position='top-center' />
-  
+   
    </AuthProvider>
   </StrictMode>,
 )

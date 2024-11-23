@@ -5,6 +5,8 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 import { FcGoogle } from "react-icons/fc";
 import { useState , useEffect ,useRef } from 'react';
+import Footer from '../Footer/Footer';
+import PageTitle from '../PageTitle/PageTitle';
 const Login = () => {
     const navigate =useNavigate()
     const [loginError, setLoginError]=useState('')
@@ -69,6 +71,7 @@ const Login = () => {
     }
     return (
         <div className='max-w-6xl mx-auto'>
+            <PageTitle></PageTitle>
             <NavBar></NavBar>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
                 <h2 className='text-center text-xl font-semibold'>Login Now</h2>
@@ -98,6 +101,8 @@ const Login = () => {
                
                
             </div>
+
+            <Footer></Footer>
         </div>
     );
 };
