@@ -1,8 +1,20 @@
-# React + Vite
+<h2>Project: Eco-Adventure Experiences </h2>
+<h3>Purpose:</h3>
+<p>This project is an web based application used for showing different types of eco adventure.
+Users can choose their favourite package and add to wishlist for future plan.
+</p>
+<h3>Live link:</h3>
+https://unarmed-song.surge.sh/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<ul>
+  <h2>Key Features</h2>
+  <li>Category wise adventure data showing</li>
+  <li>User can See details of any adventure</li>
+  <li>User can login with credentials and with google account </li>
+  <li>User can reset password if forgets </li>
+  <li>User can update his profile</li>
+  <li>user can add the items to wishlist for later traveling</li>
 
-Currently, two official plugins are available:
+</ul>
+<h3>npm package used is :AOS</h3>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
