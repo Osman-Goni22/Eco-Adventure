@@ -2,9 +2,14 @@ import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 const Adventure = ({ adventure }) => {
+
+
+   
+    
+
     const { AdventureTitle, Image, EcoFriendlyFeatures,ID } = adventure;
     return (
-        <div className=" bg-base-100 shadow-lg">
+        <div data-aos="fade-down"  className=" bg-base-100 shadow-lg">
             <figure className="md:px-10 md:pt-10">
                 <img
                     src={Image}

@@ -3,8 +3,11 @@ export const AuthContext =createContext(null);
 import { auth } from '../Firebase_init/Firebase_Init';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { sendPasswordResetEmail } from 'firebase/auth';
+import Aos from 'aos';
 const AuthProvider = ({children}) => {
-
+    useEffect(()=>{
+        Aos.init();
+    },[])
     const [user, setUser]=useState(null)
     const [loading, setLoading]= useState(true)
     const LoginUser =(email,password)=>{

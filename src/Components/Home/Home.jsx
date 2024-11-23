@@ -15,7 +15,7 @@ const Home = () => {
                 <aside className="col-span-3">
                   <LeftNavBar></LeftNavBar>
                 </aside>
-                <main className="col-span-9">
+                <main  className="col-span-9">
                   <Outlet></Outlet>
                 </main>
             </section>

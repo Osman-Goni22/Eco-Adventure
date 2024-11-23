@@ -22,8 +22,8 @@ const NavBar = () => {
 
   const links = <div className='flex md:flex-row flex-col gap-3 text-lg font-semibold '>
 
-    <NavLink className='btn ' to='/'>Home</NavLink>
-    <NavLink className='btn' to='/register'>Sign Up</NavLink>
+    <NavLink className='btn  ' to='/'>Home</NavLink>
+    <NavLink className='btn ' to='/register'>Sign Up</NavLink>
 
     {
       user && <>
