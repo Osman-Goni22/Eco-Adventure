@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute.jsx';
 import Update from './Components/Update/Update.jsx';
 import User from './Components/User/User.jsx';
+import Reset from './Components/Reset/Reset.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
   {
     path:'/user',
     element:<PrivateRoute><User></User></PrivateRoute>
+  },
+  {
+    path:'/reset',
+    element:<Reset></Reset>
   }
 ]);
 

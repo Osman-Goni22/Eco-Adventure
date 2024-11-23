@@ -11,7 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <h2 className="text-xl font-bold text-center py-5
             ">Adventure Experiences</h2>
-            <section className="grid grid-cols-12">
+            <section className=" md:grid grid-cols-12 flex flex-col">
                 <aside className="col-span-3">
                   <LeftNavBar></LeftNavBar>
                 </aside>

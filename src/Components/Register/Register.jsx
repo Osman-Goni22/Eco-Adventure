@@ -32,7 +32,9 @@ const Register = () => {
             navigate('/')
         })
 
-        .catch(err=>console.log(err.message))
+        .catch(err=>{
+            setError(err.message)
+        })
     }
 
     return (
