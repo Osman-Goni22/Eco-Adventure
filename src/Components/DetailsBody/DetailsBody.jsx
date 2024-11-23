@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const DetailsBody = () => {
     const adventures = useLoaderData();
     const params = useParams()
     const id = (params.id);
     const selectedAdventure = adventures.find(adventure => adventure.ID === id)
-    const { AdventureTitle, Image, ShortDescription, AdventureCost, Location, Duration, IncludedItems, SpecialInstructions } = selectedAdventure;
+    const { ID, AdventureTitle, Image, ShortDescription, AdventureCost, Location, Duration, IncludedItems, SpecialInstructions } = selectedAdventure;
     console.log(selectedAdventure);
-
+    const {wished,setWished} = useContext(AuthContext)
 
     const GoogleLink = 'https://meet.google.com/kqq-jpon-ayc';
 
@@ -25,6 +26,13 @@ const DetailsBody = () => {
         }
         else {
             document.getElementById('my_modal_5').showModal()
+        }
+    }
+
+    const handleWished =()=>{
+        if(!wished.includes(ID)){
+            toast('added to wished list');
+            setWished([...wished, ID])
         }
     }
 
@@ -99,7 +107,7 @@ const DetailsBody = () => {
 
                          <div className='flex gap-2 my-5'>
                          <button onClick={checkConsultation} className='btn '>Talk With Expert</button>
-                         <button className='btn '>Add to WishList</button>
+                         <button onClick={handleWished} className='btn '>Add to WishList</button>
                          </div>
 
                     </div>

@@ -8,11 +8,14 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         Aos.init();
     },[])
+
     const [user, setUser]=useState(null)
     const [loading, setLoading]= useState(true)
     const LoginUser =(email,password)=>{
       return signInWithEmailAndPassword(auth, email,password)
     }
+
+    const [wished , setWished] =useState([])
 
     const LogOutUser =()=>{
         setLoading(true)
@@ -66,7 +69,9 @@ const AuthProvider = ({children}) => {
            LoginWithGoogle,
            email,
            setEmail,
-           resetEmail
+           resetEmail,
+           wished,
+           setWished
     }
 
 

@@ -23,6 +23,7 @@ import User from './Components/User/User.jsx';
 import Reset from './Components/Reset/Reset.jsx';
 import NotFound from './Components/NotFound/NotFound.jsx';
 import PageTitle from './Components/PageTitle/PageTitle.jsx';
+import Wishlist from './Components/WishList/Wishlist.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -75,6 +76,11 @@ const router = createBrowserRouter([
   {
     path:'*',
     element:<NotFound></NotFound>
+  },
+  {
+    path:'/wishlist',
+    element:<Wishlist></Wishlist>,
+    loader:()=>fetch('/Data.json')
   }
 ]);
 

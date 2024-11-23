@@ -30,6 +30,7 @@ const NavBar = () => {
 
         <NavLink className='btn' to='/update'>Update Profile</NavLink>
         <NavLink className='btn' to='/user'>User Profile</NavLink>
+        <NavLink className='btn' to='/wishlist'>WishList</NavLink>
       </>
     }
 
